@@ -24,11 +24,10 @@ public class SampleRouter {
 	
 	@Async
 	public Future<String> printMsg2(String name) throws InterruptedException {
-		System.out.println("Inside SampleRouter: " + Thread.currentThread().getName());
-		System.out.println(" === Inside sampleRouter class");
-		
-		Thread.sleep(2000);
-		
+		System.out.println(" == 3 SampleRouter == " + Thread.currentThread().getName());
+		sampleHelper.executeThread(name);
+		Thread.sleep(3000);
+		System.out.println(" == 5 SampleRouter == ");
 		Future<String> result = CompletableFuture.completedFuture("Result from SampleRouter for mr. "+name);
 		return result;
 	}

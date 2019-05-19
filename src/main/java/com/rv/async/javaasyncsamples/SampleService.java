@@ -35,11 +35,10 @@ public class SampleService {
 	}
 	
 	public String callAsyncRouter() throws InterruptedException, ExecutionException {
-		System.out.println("Inside SampleService: " + Thread.currentThread().getName());
+		System.out.println(" == 2 SampleService: " + Thread.currentThread().getName());
 		
-		System.out.println(" === Before calling async method ");
 		Future<String> printMsg2 = sampleRouter.printMsg2("Rahul");
-		System.out.println(" === After calling async method");
+		System.out.println(" == 6 SampleService == After calling async method");
 		
 		return printMsg2.get();
 	}

@@ -26,8 +26,10 @@ public class SampleController {
 	@GetMapping("/async")
 	@ResponseBody
 	public String executeAsync() throws InterruptedException, ExecutionException {
-		System.out.println("Inside SampleController: " + Thread.currentThread().getName());
+		System.out.println(" == 1 SampleController: " + Thread.currentThread().getName());
 		
-		return sampleService.callAsyncRouter();
+		String callAsyncRouter = sampleService.callAsyncRouter();
+		System.out.println(" == 7 Controller --- after calling router===");
+		return callAsyncRouter;
 	}
 }
